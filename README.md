@@ -16,4 +16,12 @@
 
 * ‌https://www.facebook.com/programmingwithmosh (2017). Mosh Hamedani. [online] Programming with Mosh. </br>Available at: https://programmingwithmosh.com/net/should-you-split-your-asp-net-mvc-project-into-multiple-projects/ [Accessed 7 Sep. 2023].
 
+* Guru99. (2023). ASP.NET MVC Tutorial for Beginners: What is, Architecture. [online] </br>Available at: https://www.guru99.com/asp-net-mvc-tutorial.html [Accessed 9 Sep. 2023].
+
+* dotnet (2022). Getting Started with Entity Framework Core [1 of 5] | Entity Framework Core for Beginners. YouTube. </br>Available at: https://www.youtube.com/watch?v=SryQxUeChMc [Accessed 9 Sep. 2023].
+
+* Khalidabuhakmeh.com. (2023). How to use Entity Framework Core in ASP.NET Core | Khalid Abuhakmeh. [online] </br>Available at: https://khalidabuhakmeh.com/how-to-use-entity-framework-core-in-aspnet-core [Accessed 9 Sep. 2023].
+
+* Silva, B. (2020). Entity Framework: Building an ASP Web Application (MVC). [online] Medium. </br>Available at: https://medium.com/swlh/entity-framework-building-an-asp-web-application-mvc-1af09a450e88 [Accessed 9 Sep. 2023].
+
 ‌
