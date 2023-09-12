@@ -24,4 +24,8 @@
 
 * Silva, B. (2020). Entity Framework: Building an ASP Web Application (MVC). [online] Medium. </br>Available at: https://medium.com/swlh/entity-framework-building-an-asp-web-application-mvc-1af09a450e88 [Accessed 9 Sep. 2023].
 
+* Programming with Mosh (2015). Repository Pattern with C# and Entity Framework, Done Right | Mosh. YouTube.  </br>Available at: https://www.youtube.com/watch?v=rtXpYpZdOzM [Accessed 12 Sep. 2023].
+
+‌
+
 ‌
