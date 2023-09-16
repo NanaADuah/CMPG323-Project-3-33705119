@@ -44,5 +44,18 @@ namespace EcoPower_Logistics.Repository
         {
             _context.Set<T>().RemoveRange(entities);
         }
+
+        public void Update(T entity)
+        {
+            try
+            {
+                _context.Update(entity);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"{nameof(entity)} could not be updated: {ex.Message}");
+            }
+        }
     }
 }
