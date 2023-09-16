@@ -1,13 +1,30 @@
-﻿using Models;
+﻿using Data;
+using Models;
 
 namespace EcoPower_Logistics.Repository
 {
-    public class CustomerRepository : ICustomerRepository<Customer>
+    public class CustomerRepository : GenericRepository<Customer>, ICustomerRepository
     {
-        public Customer GetAllCustomers()
+        public CustomerRepository(SuperStoreContext context) : base(context)
         {
-            throw new NotImplementedException();
-            //TODO: Add implementation
+        }
+
+        public IEnumerable<Customer> GetAllCustomers()
+        {
+            try
+            {
+                return GetAll().ToList();
+            }
+            catch
+            {
+
+                throw new NotImplementedException();
+            }
+        }
+
+        public void RemoveCustomer(Customer customer)
+        {
+            Remove(customer);
         }
     }
 }

@@ -2,8 +2,8 @@
 
 namespace EcoPower_Logistics.Repository
 {
-    public interface ICustomerRepository<T> where T: class
+    public interface ICustomerRepository: IGenericRepository<Customer>
     {
-        Customer GetAllCustomers();
+        IEnumerable<Customer> GetAllCustomers();
     }
 }
