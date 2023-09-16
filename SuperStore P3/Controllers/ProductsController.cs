@@ -26,7 +26,7 @@ namespace Controllers
         {
             return _context.Products != null ?
                         View(await _context.Products.ToListAsync()) :
-                        Problem("Entity set 'SuperStoreContext.Products'  is null.");
+                        Problem("Entity set 'SuperStoreContext.Products' is null.");
         }
 
         // GET: Products/Details/5

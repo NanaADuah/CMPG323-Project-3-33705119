@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Models;
 using Data;
+using EcoPower_Logistics.Repository;
 
 namespace Controllers
 {
@@ -15,17 +16,24 @@ namespace Controllers
     public class OrdersController : Controller
     {
         private readonly SuperStoreContext _context;
+        private readonly IOrderRepository _orderRepository;
 
         public OrdersController(SuperStoreContext context)
         {
             _context = context;
+            _orderRepository = new OrderRepository(context);
+            
         }
 
         // GET: Orders
         public async Task<IActionResult> Index()
         {
-            var superStoreContext = _context.Orders.Include(o => o.Customer);
-            return View(await superStoreContext.ToListAsync());
+            //var superStoreContext = _context.Orders.Include(o => o.Customer);
+            //return View(await superStoreContext.ToListAsync());
+            //return View(_orderRepository.GetAll());
+            return _context.Orders != null ?
+                        View(await _context.Orders.ToListAsync()) :
+                        Problem("Entity set 'SuperStoreContext.Orders'  is null.");
         }
 
         // GET: Orders/Details/5
@@ -63,8 +71,8 @@ namespace Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(order);
-                await _context.SaveChangesAsync();
+                _orderRepository.Add(order);
+               // await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerId", order.CustomerId);
