@@ -59,15 +59,15 @@ namespace Controllers
         // POST: Orders/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("OrderId,OrderDate,CustomerId,DeliveryAddress")] OrderDetail order)
+        public IActionResult Create([Bind("OrderId,OrderDate,CustomerId,DeliveryAddress")] OrderDetail orderDetail_)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(order);
+                _context.Add(orderDetail_);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CustomerId"] = new SelectList(_context.GetAll(), "CustomerId", "CustomerId", order.CustomerId);
-            return View(order);
+          //  ViewData["CustomerId"] = new SelectList(_context.GetAll(), "CustomerId", "CustomerId", orderDetail_.CustomerId);
+            return View(orderDetail_);
         }
 
         // GET: Orders/Edit/5
@@ -79,7 +79,7 @@ namespace Controllers
                 return NotFound();
             }
 
-            ViewData["CustomerId"] = new SelectList(_context.GetAll(), "CustomerId", "CustomerId", order.CustomerId);
+         //   ViewData["CustomerId"] = new SelectList(_context.GetAll(), "CustomerId", "CustomerId", order.CustomerId);
             return View(order);
         }
 
@@ -113,7 +113,7 @@ namespace Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CustomerId"] = new SelectList(_contextCustomer.GetAll(), "CustomerId", "CustomerId", updateOrder.CustomerId);
+         //   ViewData["CustomerId"] = new SelectList(_contextCustomer.GetAll(), "CustomerId", "CustomerId", _contextCustomer.CustomerId);
             return View(updateOrder);
         }
 
@@ -135,7 +135,7 @@ namespace Controllers
         // POST: Orders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
             var order = _context.GetById(id);
 

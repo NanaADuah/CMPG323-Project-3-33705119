@@ -18,7 +18,7 @@ namespace Data
         }
 
         public virtual DbSet<Customer> Customers { get; set; } = null!;
-        public virtual DbSet<OrderDetail> Orders { get; set; } = null!;
+        public virtual DbSet<Order> Orders { get; set; } = null!;
         public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
         public virtual DbSet<Product> Products { get; set; } = null!;
 
@@ -45,7 +45,7 @@ namespace Data
                 entity.Property(e => e.CustomerTitle).HasMaxLength(50);
             });
 
-            modelBuilder.Entity<OrderDetail>(entity =>
+            modelBuilder.Entity<Order>(entity =>
             {
                 entity.Property(e => e.OrderId).ValueGeneratedNever();
 

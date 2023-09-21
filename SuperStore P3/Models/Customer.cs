@@ -8,7 +8,7 @@ namespace Models
     {
         public Customer()
         {
-            Orders = new HashSet<OrderDetail>();
+            Orders = new HashSet<Order>();
         }
 
         [DisplayName("Customer ID")]
@@ -23,6 +23,6 @@ namespace Models
         public string? CellPhone { get; set; }
         [DisplayName("Orders")]
 
-        public virtual ICollection<OrderDetail> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
