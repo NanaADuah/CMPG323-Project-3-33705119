@@ -2,10 +2,14 @@
 
 # Table of Content
 1. [Introduction](#introduction)
-2. [Project Documentation](#documentation)
-3. [References](#references)
+2. [Link to Project](#link)
+3. [Project Documentation](#documentation)
+4. [References](#references)
 
 # Introduction
+
+# Link
+Available at: [link](https://ecopowerlog.azurewebsites.net)
 
 # Documentation
 
