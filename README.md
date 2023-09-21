@@ -3,16 +3,63 @@
 # Table of Content
 1. [Introduction](#introduction)
 2. [Link to Project](#link)
-3. [Project Documentation](#documentation)
-4. [References](#references)
+3. [Project Goals](#goals)
+4. [Project Documentation](#documentation)
+5. [Application Uuse](#usage)
+6. [References](#references)
 
 # Introduction
+In this project, we will take an existing ASP.NET Core MVC Web Application and elevate it to new heights. The primary focus is not just on adding new features, but on understanding the architecture, applying coding principles, and incorporating design patterns that align with the project's specific requirements.
+
+![image](https://github.com/NanaADuah/CMPG323-Project-3-33705119/assets/48721153/24c04aa1-be87-402b-bf57-90d178ada193)
+
 
 # Link
 Available at: [link](https://ecopowerlog.azurewebsites.net)
 
+# Goals
+|Goals for this project||
+| ------ | -------- |
+|Enhancement and Improvement| Elevate the existing web application by implementing enhancements that align with the project's requirements.|
+|Architectural Understanding| Gain a deep understanding of architectural patterns and apply them effectively to the existing codebase.|
+|Coding Principles| Follow best coding practices and principles to ensure code quality, maintainability, and readability.|
+|Design Patterns| Implement design patterns that are appropriate for the project, ensuring scalability and robustness.|
+
 # Documentation
-The SuperStore application provides the ability for user to log in with their details and view, add or edit entities such as Products, Customers, etc.
+The SuperStore application provides the ability for user to log in with their details and view, add or edit entities such as Products, Customers, etc. This README.md file includes instructions on how end-users can interact with and use the web application effectively. This includes any necessar yuser guides, and FAQs.
+
+# Usage
+
+### Access the Home Page:
+When you first access the application, you'll be directed to the home page. Here, you can explore the available options or choose to log in or register a new account.
+User Registration and Confirmation
+
+### Register an Account:
+If you don't have an account, click the "Register" option on the home page.
+Fill in the required registration information, including your email and password.
+Click "Register" to create your account.
+
+### Account Confirmation:
+
+After registering, you'll receive a confirmation link on the screen.
+Click the link to confirm your account.
+
+### Login:
+Once your account is confirmed, you can log in using your registered email and password.
+
+### Remember Me:
+During login, you have the option to stay signed in by clicking the "Remember Me" checkbox.
+
+### Using the Application
+With a successful login, you can now use the application to manage various entities:
+
+|Entities|Usage|
+|-----------|------|
+|Customers| Add, edit, or delete customer records.|
+|Orders| Create, update, or delete orders.|
+|Products| Manage your product catalog by adding, modifying, or deleting products.|
+
+The application provides a user-friendly interface with navigation menus and forms for these operations.
 
 # References
 
