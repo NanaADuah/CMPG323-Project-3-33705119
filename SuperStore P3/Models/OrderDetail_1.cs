@@ -4,9 +4,9 @@ using System.ComponentModel;
 
 namespace Models
 {
-    public partial class Order
+    public partial class OrderDetail
     {
-        public Order()
+        public OrderDetail()
         {
             OrderDetails = new HashSet<OrderDetail>();
         }

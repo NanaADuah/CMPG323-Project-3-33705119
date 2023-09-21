@@ -6,13 +6,14 @@ namespace EcoPower_Logistics.Repository
     public class GenericRepository<T> : IGenericRepository<T> where T: class
     {
         protected readonly SuperStoreContext _context;
+
         public GenericRepository(SuperStoreContext context) {
             _context = context;
         }
 
-        public T GetById(int id)
+        public async Task<T> GetById(int id)
         {
-            return _context.Set<T>().Find(id);
+            return await _context.Set<T>().FindAsync(id);
         }
 
         public IEnumerable<T> GetAll()

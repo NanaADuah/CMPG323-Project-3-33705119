@@ -3,15 +3,15 @@ using Models;
 
 namespace EcoPower_Logistics.Repository
 {
-    public class OrderRepository : GenericRepository<Order>, IOrderRepository
+    public class OrderRepository : GenericRepository<OrderDetail>, IOrderRepository
     {
         public OrderRepository(SuperStoreContext context) : base(context)
         {
         }
 
-        public Order GetAllOrders()
+        public IEnumerable<OrderDetail> GetAllOrders()
         {
-            return _context.Orders.OrderBy(order => order.OrderId).FirstOrDefault();
+            throw new NotImplementedException();
         }
     }
 }

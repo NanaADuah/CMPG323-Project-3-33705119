@@ -28,12 +28,7 @@ namespace Controllers
         // GET: Orders
         public async Task<IActionResult> Index()
         {
-            //var superStoreContext = _context.Orders.Include(o => o.Customer);
-            //return View(await superStoreContext.ToListAsync());
-            //return View(_orderRepository.GetAll());
-            return _context.Orders != null ?
-                        View(await _context.Orders.ToListAsync()) :
-                        Problem("Entity set 'SuperStoreContext.Orders'  is null.");
+            return _context.Orders != null ? View(await _context.Orders.ToListAsync()) : Problem("Entity set 'SuperStoreContext.Orders'  is null.");
         }
 
         // GET: Orders/Details/5
@@ -44,9 +39,7 @@ namespace Controllers
                 return NotFound();
             }
 
-            var order = await _context.Orders
-                .Include(o => o.Customer)
-                .FirstOrDefaultAsync(m => m.OrderId == id);
+            var order = await _context.Orders.Include(o => o.Customer).FirstOrDefaultAsync(m => m.OrderId == id);
             if (order == null)
             {
                 return NotFound();
@@ -63,11 +56,9 @@ namespace Controllers
         }
 
         // POST: Orders/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("OrderId,OrderDate,CustomerId,DeliveryAddress")] Order order)
+        public async Task<IActionResult> Create([Bind("OrderId,OrderDate,CustomerId,DeliveryAddress")] OrderDetail order)
         {
             if (ModelState.IsValid)
             {
@@ -101,7 +92,7 @@ namespace Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("OrderId,OrderDate,CustomerId,DeliveryAddress")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("OrderId,OrderDate,CustomerId,DeliveryAddress")] OrderDetail order)
         {
             if (id != order.OrderId)
             {
