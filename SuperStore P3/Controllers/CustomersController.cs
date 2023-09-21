@@ -123,7 +123,7 @@ namespace Controllers
             var customer = _context.GetById(id);
 
             if (customer != null)
-                _context.Remove(customer);
+                _context.RemoveCustomer(customer);
             
             return RedirectToAction(nameof(Index));
         }
