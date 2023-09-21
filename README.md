@@ -1,6 +1,13 @@
 # CMPG323-Project-3-33705119
 
 # Table of Content
+1. [Introduction](#introduction)
+2. [Project Documentation](#documentation)
+3. [References](#references)
+
+# Introduction
+
+# Documentation
 
 # References
 
