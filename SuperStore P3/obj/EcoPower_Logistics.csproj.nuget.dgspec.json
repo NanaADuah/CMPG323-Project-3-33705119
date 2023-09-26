@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nana\\Documents\\Programming\\SuperStore P3\\SuperStore P3\\EcoPower_Logistics.csproj": {}
+    "C:\\Users\\Nana\\Documents\\Programming\\Project_3\\SuperStore P3\\EcoPower_Logistics.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nana\\Documents\\Programming\\SuperStore P3\\SuperStore P3\\EcoPower_Logistics.csproj": {
+    "C:\\Users\\Nana\\Documents\\Programming\\Project_3\\SuperStore P3\\EcoPower_Logistics.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nana\\Documents\\Programming\\SuperStore P3\\SuperStore P3\\EcoPower_Logistics.csproj",
+        "projectUniqueName": "C:\\Users\\Nana\\Documents\\Programming\\Project_3\\SuperStore P3\\EcoPower_Logistics.csproj",
         "projectName": "EcoPower_Logistics",
-        "projectPath": "C:\\Users\\Nana\\Documents\\Programming\\SuperStore P3\\SuperStore P3\\EcoPower_Logistics.csproj",
+        "projectPath": "C:\\Users\\Nana\\Documents\\Programming\\Project_3\\SuperStore P3\\EcoPower_Logistics.csproj",
         "packagesPath": "C:\\Users\\Nana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nana\\Documents\\Programming\\SuperStore P3\\SuperStore P3\\obj\\",
+        "outputPath": "C:\\Users\\Nana\\Documents\\Programming\\Project_3\\SuperStore P3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nana\\AppData\\Roaming\\NuGet\\NuGet.Config",

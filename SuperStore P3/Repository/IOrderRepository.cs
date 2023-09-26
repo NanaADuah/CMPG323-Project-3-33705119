@@ -2,8 +2,8 @@
 
 namespace EcoPower_Logistics.Repository
 {
-    public interface IOrderRepository : IGenericRepository<OrderDetail>
+    public interface IOrderRepository : IGenericRepository<Order>
     {
-        IEnumerable<OrderDetail> GetAllOrders();
+        IEnumerable<Order> GetAllOrders();
     }
 }

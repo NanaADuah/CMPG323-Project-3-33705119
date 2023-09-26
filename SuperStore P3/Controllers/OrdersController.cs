@@ -16,12 +16,12 @@ namespace Controllers
     public class OrdersController : Controller
     {
         //private readonly SuperStoreContext ;
-        private readonly OrderRepository _context;// _orderRepository;
+        private readonly IOrderRepository _context;// _orderRepository;
         private readonly CustomerRepository _contextCustomer;// _orderRepository;
 
-        public OrdersController(SuperStoreContext context)
+        public OrdersController(IOrderRepository context)
         {
-            _context = new OrderRepository(context);
+            _context = context;
         }
 
         // GET: Orders
@@ -59,15 +59,15 @@ namespace Controllers
         // POST: Orders/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("OrderId,OrderDate,CustomerId,DeliveryAddress")] OrderDetail orderDetail_)
+        public IActionResult Create([Bind("OrderId,OrderDate,CustomerId,DeliveryAddress")] Order order)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(orderDetail_);
+                _context.Add(order);
                 return RedirectToAction(nameof(Index));
             }
-          //  ViewData["CustomerId"] = new SelectList(_context.GetAll(), "CustomerId", "CustomerId", orderDetail_.CustomerId);
-            return View(orderDetail_);
+            ViewData["CustomerId"] = new SelectList(_context.GetAll(), "CustomerId", "CustomerId", order.CustomerId);
+            return View(order);
         }
 
         // GET: Orders/Edit/5
@@ -79,16 +79,16 @@ namespace Controllers
                 return NotFound();
             }
 
-         //   ViewData["CustomerId"] = new SelectList(_context.GetAll(), "CustomerId", "CustomerId", order.CustomerId);
+            ViewData["CustomerId"] = new SelectList(_context.GetAll(), "CustomerId", "CustomerId", order.CustomerId);
             return View(order);
         }
 
         // POST: Orders/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("OrderId,OrderDate,CustomerId,DeliveryAddress")] OrderDetail updateOrder)
+        public IActionResult Edit(int id, [Bind("OrderId,OrderDate,CustomerId,DeliveryAddress")] Order order)
         {
-            if (id != updateOrder.OrderId)
+            if (id != order.OrderId)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace Controllers
             {
                 try
                 {
-                    _context.Update(updateOrder);
+                    _context.Update(order);
 
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!OrderExists(updateOrder.OrderId))
+                    if (!OrderExists(order.OrderId))
                     {
                         return NotFound();
                     }
@@ -113,8 +113,8 @@ namespace Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-         //   ViewData["CustomerId"] = new SelectList(_contextCustomer.GetAll(), "CustomerId", "CustomerId", _contextCustomer.CustomerId);
-            return View(updateOrder);
+            ViewData["CustomerId"] = new SelectList(_contextCustomer.GetAll(), "CustomerId", "CustomerId", order.CustomerId);
+            return View(order);
         }
 
         // GET: Orders/Delete/5

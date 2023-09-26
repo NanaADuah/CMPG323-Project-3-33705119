@@ -5,26 +5,33 @@ namespace EcoPower_Logistics.Repository
 {
     public class CustomerRepository : GenericRepository<Customer>, ICustomerRepository
     {
-        public CustomerRepository(SuperStoreContext context) : base(context)
+        public CustomerRepository(SuperStoreContext superStoreContext) : base(superStoreContext)
         {
+        }
+
+        public Customer GetCustomerByI(int? id)
+        {
+            return GetAll().FirstOrDefault(x => x.CustomerId == id);
         }
 
         public IEnumerable<Customer> GetAllCustomers()
         {
-            try
-            {
-                return GetAll().ToList();
-            }
-            catch
-            {
-
-                throw new NotImplementedException();
-            }
+            return GetAll().ToList();
         }
 
-        public void RemoveCustomer(Customer customer)
+        public void AddCustomer(Customer entity)
         {
-            Remove(customer);
+            Add(entity);
+        }
+
+        public void RemoveCustomer(Customer entity)
+        {
+            Remove(entity);
+        }
+        
+        public void UpdateCustomer(Customer entity)
+        {
+            Update(entity);
         }
     }
 }
