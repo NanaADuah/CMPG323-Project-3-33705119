@@ -5,7 +5,7 @@
 2. [Link to Project](#link)
 3. [Project Goals](#goals)
 4. [Project Documentation](#documentation)
-5. [Application Uuse](#usage)
+5. [Application Use](#usage)
 6. [References](#references)
 
 # Introduction
